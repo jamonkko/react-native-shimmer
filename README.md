@@ -31,7 +31,7 @@ include ':app'
 + project(':react-native-shimmer').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-shimmer/android')
 ```
 
-* Edit `android/app/build.gradle` (note: **app** folder) to look like this: 
+* Edit `android/app/build.gradle` (note: **app** folder) to look like this:
 
 ```diff
 apply plugin: 'com.android.application'
@@ -103,6 +103,7 @@ import Shimmer from 'react-native-shimmer';
 |**`endFadeDuration`**|The duration of the fade used when shimmer ends. *iOS only*|`0`|
 |**`tilt`**|The tilt angle of the highlight, in degrees. *Android only*|`0`|
 |**`intensity`**|The intensity of the highlight mask. Range of 0–1. *Android only*|`0`|
+|**`invert`**|Invert highlight mask. Enables white effect on black text. *Android only*|`false`|
 
 ## License
 

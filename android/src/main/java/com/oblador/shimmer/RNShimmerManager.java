@@ -1,5 +1,7 @@
 package com.oblador.shimmer;
 
+import android.graphics.PorterDuff;
+
 import com.facebook.react.uimanager.ThemedReactContext;
 import com.facebook.react.uimanager.ViewGroupManager;
 import com.facebook.react.uimanager.annotations.ReactProp;
@@ -122,5 +124,12 @@ public class RNShimmerManager extends ViewGroupManager<RNShimmeringView> {
             view.setSpeed(value);
             view.invalidate();
         }
+    }
+
+    @ReactProp(name = "invert", defaultBoolean = false)
+    public void setInvert(RNShimmeringView view, boolean value) {
+        PorterDuff.Mode mode = value ? PorterDuff.Mode.DST_OUT : PorterDuff.Mode.DST_IN;
+        view.setPaintXferMode(mode);
+        view.invalidate();
     }
 }
