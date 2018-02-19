@@ -32,7 +32,7 @@ export default class Shimmer extends Component {
     beginFadeDuration: PropTypes.number,
     endFadeDuration: PropTypes.number,
     invert: PropTypes.bool,
-    color: PropTypes.string
+    color: PropTypes.number
   };
 
   static defaultProps = {
@@ -45,7 +45,6 @@ export default class Shimmer extends Component {
     beginFadeDuration: 0,
     endFadeDuration: 0,
     invert: false,
-    color: "#000000"
   };
 
   render() {
