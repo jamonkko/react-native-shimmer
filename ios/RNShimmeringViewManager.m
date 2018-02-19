@@ -43,6 +43,7 @@ RCT_REMAP_VIEW_PROPERTY(highlightLength, shimmeringHighlightLength, CGFloat)
 RCT_REMAP_VIEW_PROPERTY(beginFadeDuration, shimmeringBeginFadeDuration, CFTimeInterval)
 RCT_REMAP_VIEW_PROPERTY(endFadeDuration, shimmeringEndFadeDuration, CFTimeInterval)
 RCT_REMAP_VIEW_PROPERTY(invert, shimmeringInvert, BOOL)
+RCT_REMAP_VIEW_PROPERTY(color, shimmeringColor, STRING)
 
 @end
 
