@@ -26,78 +26,39 @@ public class RNShimmerManager extends ViewGroupManager<RNShimmeringView> {
 
     @ReactProp(name = "animating", defaultBoolean = true)
     public void setAnimating(RNShimmeringView view, boolean value) {
-        if (value) view.startShimmerAnimation();
-//        if (value != view.isAutoStart()) {
-//            view.setAutoStart(value);
-//            view.invalidate();
-//        }
+        if (value) {
+            view.startShimmerAnimation();
+        } else {
+            view.stopShimmerAnimation();
+        }
     }
 
     @ReactProp(name = "shimmeringOpacity", defaultFloat = 0.5f)
     public void setShimmeringOpacity(RNShimmeringView view, float value) {
-//        if (value > 1.0f) {
-//            value = 1.0f;
-//        }
-//        if (value < 0.0f) {
-//            value = 0.0f;
-//        }
-//
-//        if (value != view.getBaseAlpha()) {
-//            view.setBaseAlpha(value);
-//            view.invalidate();
-//        }
+        throw new IllegalArgumentException("'shimmeringOpacity' not supported for Android ShimmerLayout. Use instead the alpha-channel of 'color' to control opacity of shimmer e.g. color: '#FFFFFF33'");
     }
 
     @ReactProp(name = "intensity", defaultFloat = 0.0f)
-    public void setAnimationOpacity(RNShimmeringView view, float value) {
-//        if (value > 1.0f) {
-//            value = 1.0f;
-//        }
-//        if (value < 0.0f) {
-//            value = 0.0f;
-//        }
-//
-//        if (value != view.getIntensity()) {
-//            view.setIntensity(value);
-//            view.invalidate();
-//        }
+    public void setIntensity(RNShimmeringView view, float value) {
+        view.setGradientCenterColorWidth(value);
+        view.invalidate();
     }
 
-    @ReactProp(name = "color", customType = "Color")
-    public void setBorderColor(RNShimmeringView view, int color) {
+    @ReactProp(name = "shimColor", customType = "Color")
+    public void setShimColor(RNShimmeringView view, int color) {
         view.setShimmerColor(color);
         view.invalidate();
     }
 
-    @ReactProp(name = "width", defaultFloat = 0.5f)
-    public void setWidth(RNShimmeringView view, float width) {
+    @ReactProp(name = "shimWidth", defaultFloat = 0.5f)
+    public void setShimWidth(RNShimmeringView view, float width) {
         view.setMaskWidth(width);
         view.invalidate();
     }
 
-
     @ReactProp(name = "shimmeringDirection")
     public void setAnimating(RNShimmeringView view, String value) {
-//        RNShimmeringView.MaskAngle angle = RNShimmeringView.MaskAngle.CW_0;
-//        switch (value) {
-//            case "up":
-//                angle = RNShimmeringView.MaskAngle.CW_270;
-//                break;
-//            case "left":
-//                angle = RNShimmeringView.MaskAngle.CW_180;
-//                break;
-//            case "down":
-//                angle = RNShimmeringView.MaskAngle.CW_90;
-//                break;
-//            case "right":
-//            default:
-//                break;
-//        }
-//
-//        if (angle != view.getAngle()) {
-//            view.setAngle(angle);
-//            view.invalidate();
-//        }
+        throw new IllegalArgumentException("'shimmeringDirection' not supported for Android ShimmerLayout");
     }
 
     @ReactProp(name = "duration", defaultInt = 1000)
@@ -124,21 +85,11 @@ public class RNShimmerManager extends ViewGroupManager<RNShimmeringView> {
 
     @ReactProp(name = "speed", defaultInt = 230)
     public void setSpeed(RNShimmeringView view, int value) {
-//        if (value < 0) {
-//            value = 0;
-//        }
-//
-//        if (value != view.getSpeed()) {
-//            view.setSpeed(value);
-//            view.invalidate();
-//        }
+        throw new IllegalArgumentException("'speed' not supported for Android ShimmerLayout, calculate and use duration instead.");
     }
 
     @ReactProp(name = "invert", defaultBoolean = false)
     public void setInvert(RNShimmeringView view, boolean value) {
-//        PorterDuff.Mode mode = value ? PorterDuff.Mode.DST_OUT : PorterDuff.Mode.DST_IN;
-//        view.setPaintXferMode(mode);
-//        view.invalidate();
+        throw new IllegalArgumentException("'invert' not supported for Android ShimmerLayout, use 'color' instead.");
     }
-
 }
