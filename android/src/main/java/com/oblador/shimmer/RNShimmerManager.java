@@ -69,6 +69,12 @@ public class RNShimmerManager extends ViewGroupManager<RNShimmeringView> {
         view.invalidate();
     }
 
+    @ReactProp(name = "width", defaultFloat = 0.5f)
+    public void setWidth(RNShimmeringView view, float width) {
+        view.setMaskWidth(width);
+        view.invalidate();
+    }
+
 
     @ReactProp(name = "shimmeringDirection")
     public void setAnimating(RNShimmeringView view, String value) {
