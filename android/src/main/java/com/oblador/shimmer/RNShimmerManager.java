@@ -35,7 +35,7 @@ public class RNShimmerManager extends ViewGroupManager<RNShimmeringView> {
 
     @ReactProp(name = "shimmeringOpacity", defaultFloat = 0.5f)
     public void setShimmeringOpacity(RNShimmeringView view, float value) {
-        throw new IllegalArgumentException("'shimmeringOpacity' not supported for Android ShimmerLayout. Use instead the alpha-channel of 'color' to control opacity of shimmer e.g. color: '#FFFFFF33'");
+        // Not supported
     }
 
     @ReactProp(name = "intensity", defaultFloat = 0.0f)
@@ -58,7 +58,7 @@ public class RNShimmerManager extends ViewGroupManager<RNShimmeringView> {
 
     @ReactProp(name = "shimmeringDirection")
     public void setAnimating(RNShimmeringView view, String value) {
-        throw new IllegalArgumentException("'shimmeringDirection' not supported for Android ShimmerLayout");
+        // Not supported
     }
 
     @ReactProp(name = "duration", defaultInt = 1000)
@@ -85,11 +85,11 @@ public class RNShimmerManager extends ViewGroupManager<RNShimmeringView> {
 
     @ReactProp(name = "speed", defaultInt = 230)
     public void setSpeed(RNShimmeringView view, int value) {
-        throw new IllegalArgumentException("'speed' not supported for Android ShimmerLayout, calculate and use duration instead.");
+        // Not supported
     }
 
     @ReactProp(name = "invert", defaultBoolean = false)
     public void setInvert(RNShimmeringView view, boolean value) {
-        throw new IllegalArgumentException("'invert' not supported for Android ShimmerLayout, use 'color' instead.");
+        // Not supported
     }
 }
