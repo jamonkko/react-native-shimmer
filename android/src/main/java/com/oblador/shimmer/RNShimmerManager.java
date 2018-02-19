@@ -109,14 +109,11 @@ public class RNShimmerManager extends ViewGroupManager<RNShimmeringView> {
 
     @ReactProp(name = "pauseDuration", defaultInt = 400)
     public void setPauseDuration(RNShimmeringView view, int value) {
-//        if (value < 0) {
-//            value = 0;
-//        }
-//
-//        if (value != view.getRepeatDelay()) {
-//            view.setRepeatDelay(value);
-//            view.invalidate();
-//        }
+        if (value < 0) {
+            value = 0;
+        }
+        view.setShimmerAnimationStartDelay(value);
+        view.invalidate();
     }
 
     @ReactProp(name = "tilt", defaultInt = 0)
