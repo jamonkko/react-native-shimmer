@@ -64,9 +64,8 @@ public class RNShimmerManager extends ViewGroupManager<RNShimmeringView> {
     }
 
     @ReactProp(name = "color", customType = "Color")
-    public void setBorderColor(RNShimmeringView view, @Nullable String color) {
-        int colorValue = color == null ? Color.TRANSPARENT : parseColor(color);
-        view.setShimmerColor(colorValue);
+    public void setBorderColor(RNShimmeringView view, int color) {
+        view.setShimmerColor(color);
         view.invalidate();
     }
 
