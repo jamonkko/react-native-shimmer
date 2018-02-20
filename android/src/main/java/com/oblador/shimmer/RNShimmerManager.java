@@ -73,7 +73,7 @@ public class RNShimmerManager extends ViewGroupManager<RNShimmeringView> {
         if (value < 0) {
             value = 0;
         }
-        view.setShimmerAnimationStartDelay(value);
+        view.setShimmerAnimationDelay(value);
         view.invalidate();
     }
 
@@ -92,4 +92,11 @@ public class RNShimmerManager extends ViewGroupManager<RNShimmeringView> {
     public void setInvert(RNShimmeringView view, boolean value) {
         // Not supported
     }
+
+    @ReactProp(name = "echo", defaultBoolean = true)
+    public void setShimColor(RNShimmeringView view, boolean enabled) {
+        view.enableShimmerEcho(enabled);
+        view.invalidate();
+    }
+
 }
