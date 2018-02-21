@@ -34,7 +34,8 @@ export default class Shimmer extends Component {
     invert: PropTypes.bool,
     shimColor: PropTypes.string,
     shimWidth: PropTypes.number,
-    echo: PropTypes.bool
+    echo: PropTypes.bool,
+    loop: PropTypes.bool
   };
 
   static defaultProps = {
@@ -49,7 +50,8 @@ export default class Shimmer extends Component {
     invert: false,
     shimColor: "#FFFFFF",
     shimWidth: 0.5,
-    echo: true
+    echo: true,
+    loop: true
   };
 
   render() {

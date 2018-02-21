@@ -1,14 +1,8 @@
 package com.oblador.shimmer;
 
-import android.graphics.Color;
-import android.graphics.PorterDuff;
-import android.support.annotation.Nullable;
-
 import com.facebook.react.uimanager.ThemedReactContext;
 import com.facebook.react.uimanager.ViewGroupManager;
 import com.facebook.react.uimanager.annotations.ReactProp;
-
-import static android.graphics.Color.parseColor;
 
 public class RNShimmerManager extends ViewGroupManager<RNShimmeringView> {
 
@@ -57,7 +51,7 @@ public class RNShimmerManager extends ViewGroupManager<RNShimmeringView> {
     }
 
     @ReactProp(name = "shimmeringDirection")
-    public void setAnimating(RNShimmeringView view, String value) {
+    public void setDirection(RNShimmeringView view, String value) {
         // Not supported
     }
 
@@ -66,7 +60,6 @@ public class RNShimmerManager extends ViewGroupManager<RNShimmeringView> {
         view.setShimmerAnimationDuration(value);
         view.invalidate();
     }
-
 
     @ReactProp(name = "pauseDuration", defaultInt = 400)
     public void setPauseDuration(RNShimmeringView view, int value) {
@@ -94,9 +87,14 @@ public class RNShimmerManager extends ViewGroupManager<RNShimmeringView> {
     }
 
     @ReactProp(name = "echo", defaultBoolean = true)
-    public void setShimColor(RNShimmeringView view, boolean enabled) {
+    public void setEcho(RNShimmeringView view, boolean enabled) {
         view.enableShimmerEcho(enabled);
         view.invalidate();
     }
 
+    @ReactProp(name = "loop", defaultBoolean = true)
+    public void setLoop(RNShimmeringView view, boolean enabled) {
+        view.enableShimmerLoop(enabled);
+        view.invalidate();
+    }
 }
