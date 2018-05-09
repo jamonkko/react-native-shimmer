@@ -36,5 +36,5 @@ repositories {
 
 dependencies {
     compile 'com.facebook.react:react-native:+'
-    compile 'com.github.jamonkko:shimmerlayout:c5035ddfb9cca1daf16f185864f87da1af1fd794'
+    compile 'com.github.jamonkko:shimmerlayout:57f4d869cb1f8689a141b2eef2a31ad4e9080532'
 }
