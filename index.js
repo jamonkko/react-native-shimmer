@@ -54,10 +54,17 @@ export default class Shimmer extends Component {
     loop: true
   };
 
+  setNativeProps = function (nativeProps) {
+    if (this._view) {
+      this._view.setNativeProps(nativeProps);
+    }
+  }
+
   render() {
     const { direction, opacity, ...props } = this.props;
     return (
       <RNShimmeringView
+        ref={view => { this._view = view; }}
         shimmeringOpacity={opacity}
         shimmeringDirection={direction}
         {...props}
